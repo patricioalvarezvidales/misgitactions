@@ -1,0 +1,19 @@
+name: Prueba GitHub Actions
+
+on: [push]
+
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Paso 1 - Mensaje
+        run: echo "¡GitHub Actions funciona!"
+        
+      - name: Paso 2 - Checkout
+        uses: actions/checkout@v3
+        
+      - name: Paso 3 - Información
+        run: |
+          echo "Sistema: $RUNNER_OS"
+          echo "Directorio: $GITHUB_WORKSPACE"
+          ls -la
